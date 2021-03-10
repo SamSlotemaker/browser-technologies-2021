@@ -122,8 +122,7 @@ footer section {
     margin: 0;
 }
 
-footer section:first-of-type ul {
-    display: flex;
+footer section ul {
     padding: 0;
 }
 
