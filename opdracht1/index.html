@@ -18,58 +18,99 @@
         <section>
             <h1>Progressive enhancement</h1>
             <p>
-                Progressive enhancement is het bouwen van een solide basis van het product, die de gebruiker instaat
-                maakt
-                een product vlekkeloos te gebruiken. Wanneer deze basis staat, is progressive enhancement de techniek om
-                steeds verder te bouwen dit voor zowel het product als de gebruiker mogelijk is.
+                Progressive Enhancement is een begrip uit de digitale wereld die letterlijk vertaald "progressieve
+                verbetering" betekent. Bij progressive enhancement ontwikkelt een website of webapplicatie eerst een
+                basisversie die volledig werkt voor bezoekers met verouderde browsers, functiebeperkingen, surfen
+                terwijl ze
+                bepaalde technieken zoals JavaScript, afwijkende toestellen en schermresoluties hebben uitgeschakeld, of
+                met
+                een trage verbinding. </br> Vervolgens, als een browser css aankan, wordt dit ingezet om de pagina
+                aantrekkelijker
+                en overzichtelijker te maken, en datzelfde geldt met Javascript. </p>
+            <p> JavaScript kan worden ingezet om
+                bepaalde
+                taken voor een gebruiker te versimpelen. Ook binnen deze omgevingen (CSS, JavaScript) moet er rekening
+                gehouden worden met bepaalde functionaliteiten die in oudere versies niet zullen werken.
             </p>
-            <p>
-                In de wereld van browser zou dit bijvoorbeeld betekenen dat je begint met een applicatie die zich
-                volledig
-                kan redden in enkel HTML. Als een browser css aankan, kan dit worden ingezet om de pagina
-                aantrekkelijker en
-                overzichtelijker te maken, en ditzelfde geld voor JavaScript. JavaScript kan bijvoorbeeld worden ingezet
-                om
-                bepaalde taken voor een gebruiker te versimpelen. Ook binnen deze omgevingen (CSS, JavaScript) moet er
-                rekening gehouden worden met bepaalde functionaliteiten die in oudere versies niet zullen werken.
-            </p>
+
+
+
+
+
+            <blockquote>
+                "You start by establishing a basic level of user experience that all browsers will be able to provide
+                when rendering your web site, but you also build in more advanced functionality that will automatically
+                be available to browsers that can use it." -W3C
+            </blockquote>
         </section>
 
 
         <section>
             <h2>Elektrische fiets</h2>
-            <p></p>
             <div class="image-container">
                 <div>
-                    <h3>HTML - basis</h3>
                     <div>
+                        <h3>HTML - basis</h3>
                         <img src="http://www.fietsenpagina.nl/images/Highlander-Omafiets.jpg" alt="">
-                        <p>Een gewone fiets heeft enkel een basis, zonder extra functionaliteiten</p>
                     </div>
+                    <p>Een gewone fiets heeft enkel een basis, zonder extra functionaliteiten.</p>
+
                 </div>
                 <div>
-                    <h3>CSS - styling</h3>
                     <div>
+                        <h3>CSS - styling</h3>
                         <img src="https://www.bicicare.nl/wp-content/uploads/2018/03/ultra-pointer-fiets-dames-600x400.jpg"
                             alt="">
-                        <p>Wanneer de styling wordt toegpast, krijgt de fiets een meerwaarde voor gebruikers</p>
                     </div>
+                    <p>Wanneer de styling wordt toegpast, krijgt de fiets een meerwaarde voor gebruikers.</p>
+
                 </div>
                 <div>
-                    <h3>JavaScript - gedrag</h3>
                     <div>
+                        <h3>JavaScript - gedrag</h3>
                         <img src="https://cdn.webshopapp.com/shops/269119/files/338804143/altec-sakura-elektrische-fiets-dames-3v-53cm-olijf.jpg"
                             alt="">
-
-                        <p>Bij het toevoegen van het gedrag, de elektrische motor in dit geval, zal de fiets
-                            makkelijker
-                            worden in gebruik</p>
                     </div>
+                    <p>Bij het toevoegen van het gedrag, de elektrische motor in dit geval, zal de fiets
+                        makkelijker worden in gebruik.</p>
                 </div>
-            </div>
         </section>
-        <section>
+        <section class="voorbeeld">
+            <h2>Praktijk voorbeeld</h2>
+            <div>
+                <img src="styles/images/voorbeeld.png" alt="">
+            </div>
+
+        </section>
+        <section id="testen">
             <h2>Testen</h2>
+            <div>
+                <h3>1. Allereerst de CSS weghalen door dit in de head te verwijderen</h3>
+                <img src="https://camo.githubusercontent.com/5b8f90eb00a368e8111c1a855babdfa45970acb9de94347e163ce6cdf13d9698/68747470733a2f2f692e696d6775722e636f6d2f33414d766e7a722e706e67"
+                    alt="CSS weghalen">
+                <p>Kun je nog steeds de belangrijke taak uitvoeren die je kwam doen, ondanks dat de CSS weg is?</p>
+            </div>
+            <div>
+                <h3>2. Javascript verwijderen op dezelfde manier</h3>
+                <p>Is de slideshow nu scrollable, of kom je erachter dat deze alleen werkt mbv Javascript?</p>
+                <p>Kun je nog steeds dat formulier versturen?</p>
+            </div>
+            <div>
+                <h3>3. Website laden met een slechte internetverbinding</h3>
+                <p>Dit kun je doen door in de developer tools voor ‘Slow 3G’ te kiezen:</p>
+                <img src="https://i.imgur.com/mI5haG8.png" alt="Slow 3g instellen">
+                <p>Worden de belangrijke dingen eerst geladen?</p>
+                <p>Werkt de website überhaupt nog?</p>
+            </div>
+            <div>
+                <h3>4. Bekijk de website op verschillende browsers</h3>
+                <p>Kom je erachter dat sommige dingen niet op andere browsers werken?</p>
+            </div>
+            <div>
+                <h3>5. Bekijk de website op een mobiel apparaat</h3>
+                <p>Zijn de juiste concessies gemaakt als het gaat om het laten zien van content?</p>
+                <p>Is wat je ziet datgene dat je nodig hebt om je doel als mobiele gebruiker te behalen?</p>
+            </div>
         </section>
 
     </main>
@@ -77,12 +118,20 @@
         <section>
             <h2>Bronnen</h2>
             <ul>
-                <li>bron1</li>
-                <li>bron2</li>
+                <li>https://alistapart.com/article/understandingprogressiveenhancement/
+                </li>
+                <li>https://www.w3.org/wiki/Graceful_degradation_versus_progressive_enhancement</li>
                 <li>bron3</li>
             </ul>
         </section>
-
+        <section>
+            <ul>
+                <li>Inju</li>
+                <li>Stan B</li>
+                <li>Rowin</li>
+                <li>Sam S</li>
+            </ul>
+        </section>
 
     </footer>
 </body>
