@@ -1,12 +1,12 @@
 {
   "name": "eindopdracht",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "a shirtdesign app",
+  "main": "/eindopdracht/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node ./eindopdracht/index.js",
+    "dev": "nodemon ./eindopdracht/index.js"
   },
   "author": "",
   "license": "ISC",
