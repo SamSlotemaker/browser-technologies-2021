@@ -5,12 +5,14 @@
 <body>
     <main>
         <h1>Shirts ontwerpen</h1>
-
+        <% if(userid){ %>
+        <p>Jouw id is: <%= userid %></p>
+        <% } %>
         <section class="designs">
             <h2>Ontwerpen</h2>
             <% if(designs.length === 0){ %>
             <p>Je hebt nog geen ontwerpen</p>
-            <a href="/create">Ontwerp een shirt</a>
+            <a href="/<%=userid%>/create">Ontwerp een shirt</a>
             <% } %>
 
             <% if(designs.length > 0){ %>
@@ -20,10 +22,10 @@
                     <article>
                         <h3><%= design.color %></h3>
                         <p class="text-description"><%= design.text %></p>
-                        <form method="POST" action="/cart/add/<%= design.id %>">
+                        <form method="POST" action="/<%=userid%>/cart/add/<%= design.id %>">
                             <button class="cart-button">Cart</button>
                         </form>
-                        <form method="POST" action="/designs/delete/<%= design.id %>">
+                        <form method="POST" action="/<%=userid%>/designs/delete/<%= design.id %>">
                             <button class="remove-button">X</button>
                         </form>
 
@@ -31,7 +33,7 @@
                 </li>
                 <% }) %>
             </ul>
-            <a class="plus-button" href="/create">+</a>
+            <a class="plus-button" href="/<%=userid%>/create">+</a>
             <% } %>
 
         </section>
@@ -48,13 +50,13 @@
                     <article>
                         <h3><%= design.color %></h3>
                         <p class="text-description"><%= design.text %></p>
-                        <form method="POST" action="/cart/delete/<%= design.id %>">
+                        <form method="POST" action="<%=userid%>/cart/delete/<%= design.id %>">
                             <button class="remove-button">X</button>
                         </form>
                     </article>
                 </li>
                 <% }) %>
-                <a href="/order">Bestellen</a>
+                <a href="<%=userid%>/order">Bestellen</a>
                 <% } %>
             </ul>
         </section>

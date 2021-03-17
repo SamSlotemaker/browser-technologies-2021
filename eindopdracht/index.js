@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const { v4: uuidv4 } = require('uuid');
 const port = process.env.PORT || 4000
-const path = require('path')
+const path = require('path');
 
 //declare middleware
 app.use(express.static(path.join(__dirname, 'public')))
@@ -10,26 +10,38 @@ app.use(express.urlencoded({ extended: false }))
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views/pages'))
 
-let designs = [];
-let cart = [];
+let users = []
 
 //get routes 
 //overview page
 app.get('/', (req, res) => {
-    res.render('overview', { designs, cart })
+    const userid = uuidv4();
+    res.redirect('/' + userid)
 })
-
-app.get('/:id', (req, res) => {
-    res.render('overview', { designs, cart })
+app.get('/favicon.ico', (req, res) => {
+    return 'favicon.ico'
 })
+app.get('/:userid', (req, res) => {
+    let user = users.find(user => {
+        return user.id === req.params.userid
+    })
 
+    //create empty object to start with when it doesnt exist yet
+    if (!user) {
+        user = {}
+        user.designs = []
+        user.cart = []
+    }
+
+    res.render('overview', { designs: user.designs, cart: user.cart, userid: req.params.userid })
+})
 
 //design page
-app.get('/create', (req, res) => {
-    res.render('create')
+app.get('/:userid/create', (req, res) => {
+    res.render('create', { userid: req.params.userid })
 })
 //create shirt design
-app.post('/create', (req, res) => {
+app.post('/:userid/create', (req, res) => {
     const shirt = {
         id: uuidv4(),
         color: req.body.color,
@@ -37,28 +49,54 @@ app.post('/create', (req, res) => {
         gender: req.body.gender,
         text: req.body.text
     }
-    designs.push(shirt)
-    res.redirect('/')
+
+    if (!checkIfUserExist(users, req.params.userid)) {
+        users.push({
+            id: req.params.userid,
+            designs: [],
+            cart: []
+        })
+    }
+    users.forEach(user => {
+        if (user.id === req.params.userid) {
+            user.designs.push(shirt)
+        }
+    })
+
+    console.log(users)
+    // console.log(users)
+    res.redirect('/' + req.params.userid)
 })
 
 //DESIGNS ROUTE
-app.post('/designs/delete/:id', (req, res) => {
+app.post('/:userid/designs/delete/:id', (req, res) => {
     const id = req.params.id;
-    designs = designs.filter(design => design.id !== id)
-    res.redirect('/')
+    users.forEach(user => {
+        if (user.id === req.params.userid) {
+            user.designs = user.designs.filter(design => design.id !== id)
+        }
+    })
+    res.redirect('/' + req.params.userid)
 })
 
 //CART ROUTES
-app.post('/cart/add/:id', (req, res) => {
+app.post('/:userid/cart/add/:id', (req, res) => {
     const id = req.params.id;
-    cart.push(designs.find(design => design.id === id))
-    res.redirect('/')
+    users.forEach(user => {
+        if (user.id === req.params.userid) {
+            user.cart.push(user.designs.find(design => design.id === id))
+        }
+    })
+    res.redirect('/' + req.params.userid)
 })
-app.post('/cart/delete/:id', (req, res) => {
+app.post('/:userid/cart/delete/:id', (req, res) => {
     const id = req.params.id;
-    console.log(id)
-    cart = cart.filter(design => design.id !== id)
-    res.redirect('/')
+    users.forEach(user => {
+        if (user.id === req.params.userid) {
+            user.cart = user.cart.filter(design => design.id !== id)
+        }
+    })
+    res.redirect('/' + req.params.userid)
 })
 
 
@@ -70,3 +108,12 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
     console.log(`app listening on port: ${port}`)
 })
+
+
+function checkIfUserExist(array, user) {
+    if (array.find(item => item.id === user)) {
+        return true;
+    } else {
+        return false;
+    }
+}
