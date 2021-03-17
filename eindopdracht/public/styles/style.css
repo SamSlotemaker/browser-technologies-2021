@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+:root {
+    --bgc: #264653;
+    --bgc-light: #2A9D8f;
+    --orange: #E76F51;
+    --orange-light: #F4A261;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: white;
+    background-color: var(--bgc);
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    padding: 0em 2em;
+}
+
+h1 {
+    color: var(--orange);
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    background-color: var(--orange-light);
+    color: var(--bgc);
+    padding: .5em 1em;
+    text-decoration: none;
+    display: inline-block;
+    margin: 1em 0em;
+}
+
+section {
+    max-width: 1200px;
+    margin: 3em auto;
+}
+
+.remove-button {
+    background-color: rgb(179, 44, 44);
+    font-weight: bold;
+    color: white;
+    border: none;
+    padding: .5em 1em;
+
+}
+
+.cart-button {
+    background-color: white;
+    font-weight: bold;
+    color: var(--bgc);
+    border: none;
+    padding: .5em 1em;
+}
+
+.designs ul li article {
+    display: flex;
+    align-items: center;
+}
+
+.designs ul li article form:first-of-type {
+    margin-left: auto;
+    margin-right: .5em;
+}
+
+.text-description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 40px;
+}
+
+.plus-button {
+    margin: 0;
+}
+
+/* cart */
+
+.cart ul li article {
+    display: flex;
+    align-items: center;
+}
+
+.cart ul li article form:first-of-type {
+    margin-left: auto;
+    margin-right: .5em;
+}
+
+.designs ul li article h3,
+.cart ul li article h3 {
+    position: relative;
+}
+
+.designs ul li article h3::after,
+.cart ul li article h3::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 2.5px);
+    right: -25px;
+    height: 5px;
+    width: 10px;
+    display: inline-block;
+    background-color: var(--orange);
+}
+
+/* FORM */
+.create-form fieldset {
+    margin-bottom: 2em;
+    border: none;
+}
+
+.create-form fieldset legend {
+    font-weight: bold;
+    color: var(--orange-light);
+}
+
+.create-form fieldset input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+}
+
+.create-form fieldset input[type="radio"]+label {
+    display: inline-block;
+    background-color: white;
+    color: var(--orange);
+    padding: .3em;
+    margin-right: .5em;
+    font-weight: 500;
+}
+
+.create-form fieldset input[type="radio"]:checked+label {
+    background-color: var(--orange);
+    color: white;
+}
+
+
+.save-button {
+    background-color: var(--orange-light);
+    color: var(--bgc);
+    padding: .5em 1em;
+    text-decoration: none;
+    display: inline-block;
+    margin: 1em 0em;
+    border: none;
+    font-weight: bold;
+    font-size: 1em;
+}

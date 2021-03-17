@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="eng">
+<%- include('./../partials/head.ejs'); %>
+
+<body>
+    <main>
+        <a href="/">Terug</a>
+        <h1>Ontwerp</h1>
+
+        <form method="POST" action="/create" class="create-form">
+            <fieldset required>
+                <legend>Kleur</legend>
+                <input type="radio" name="color" id="black" value="black" required>
+                <label for="black">black</label>
+
+                <input type="radio" name="color" id="white" value="white">
+                <label for="white">white</label>
+
+                <input type="radio" name="color" id="red" value="red">
+                <label for="red">red</label>
+
+                <input type="radio" name="color" id="blue" value="blue">
+                <label for="blue">blue</label>
+            </fieldset>
+            <fieldset>
+                <legend>Model</legend>
+                <input type="radio" name="gender" id="man" value="man" required>
+                <label for="man">man</label>
+
+                <input type="radio" name="gender" id="woman" value="woman">
+                <label for="woman">woman</label>
+
+                <select name="size" id="size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+
+            </fieldset>
+            <fieldset>
+                <legend>Text</legend>
+                <textarea name="text" id="text" cols="30" rows="3" required></textarea>
+            </fieldset>
+            <button type="submit" class="save-button">Opslaan</button>
+        </form>
+    </main>
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>
