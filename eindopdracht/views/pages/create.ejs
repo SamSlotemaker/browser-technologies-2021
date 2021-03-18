@@ -4,46 +4,65 @@
 
 <body>
     <main>
-        <a href="/">Terug</a>
-        <h1>Ontwerp</h1>
+        <section>
+            <a href="/">Terug</a>
+            <h1>Ontwerpen</h1>
 
-        <form method="POST" action="/<%= userid%>/create" class="create-form">
-            <fieldset required>
-                <legend>Kleur</legend>
-                <input type="radio" name="color" id="black" value="black" required>
-                <label for="black">black</label>
+            <form method="POST" action="/<%= userid%>/create" class="create-form">
+                <fieldset required>
+                    <legend>Kleur</legend>
+                    <input type="radio" name="color" id="black" value="black" required>
+                    <label for="black">zwart</label>
 
-                <input type="radio" name="color" id="white" value="white">
-                <label for="white">white</label>
+                    <input type="radio" name="color" id="white" value="white">
+                    <label for="white">wit</label>
 
-                <input type="radio" name="color" id="red" value="red">
-                <label for="red">red</label>
+                    <input type="radio" name="color" id="red" value="red">
+                    <label for="red">rood</label>
 
-                <input type="radio" name="color" id="blue" value="blue">
-                <label for="blue">blue</label>
-            </fieldset>
-            <fieldset>
-                <legend>Model</legend>
-                <input type="radio" name="gender" id="man" value="man" required>
-                <label for="man">man</label>
+                    <input type="radio" name="color" id="blue" value="blue">
+                    <label for="blue">blauw</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Model</legend>
+                    <input type="radio" name="gender" id="man" value="man" required>
+                    <label for="man">man</label>
 
-                <input type="radio" name="gender" id="woman" value="woman">
-                <label for="woman">woman</label>
+                    <input type="radio" name="gender" id="woman" value="woman">
+                    <label for="woman">vrouw</label>
 
-                <select name="size" id="size">
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                </select>
+                    <select name="size" id="size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
 
-            </fieldset>
-            <fieldset>
-                <legend>Text</legend>
-                <textarea name="text" id="text" cols="30" rows="3" required></textarea>
-            </fieldset>
-            <button type="submit" class="save-button">Opslaan</button>
-        </form>
+                </fieldset>
+                <fieldset>
+                    <legend>Text</legend>
+                    <textarea name="text" id="text" cols="30" rows="3" required></textarea>
+                </fieldset>
+
+                <figure class="shirt-container">
+                    <p>Hier komt jouw text</p>
+                    <?xml version="1.0" encoding="iso-8859-1"?>
+                    <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                    <svg class="shirt" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.882 511.882"
+                        style="enable-background:new 0 0 511.882 511.882;" xml:space="preserve">
+                        <polygon points="362.587,42.65 149.301,42.65 0,127.959 42.662,245.268 106.647,223.937 106.647,469.232 
+                    405.25,469.232 405.25,223.937 469.236,245.268 511.882,127.959 " />
+                        <path d="M255.948,117.297c41.233,0,74.647-33.422,74.647-74.647H181.294
+                    C181.294,83.875,214.716,117.297,255.948,117.297z" />
+                    </svg>
+
+                </figure>
+
+                <button type="submit" class="save-button">Opslaan</button>
+            </form>
+
+        </section>
     </main>
     <script src="/scripts/script.js"></script>
 </body>
