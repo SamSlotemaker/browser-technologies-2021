@@ -6,6 +6,7 @@
     --bgc-light: #2A9D8f;
     --orange: #E76F51;
     --orange-light: #F4A261;
+    --error: #e82727;
 }
 
 * {
@@ -119,6 +120,8 @@ section {
 
 /* FORM */
 .create-form fieldset {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 2em;
     border: none;
 }
@@ -140,6 +143,8 @@ section {
     color: var(--orange);
     padding: .3em;
     margin-right: .5em;
+    margin-top: .5em;
+    margin-bottom: .5em;
     font-weight: 500;
 }
 
@@ -188,4 +193,27 @@ section {
 
 .shirt path {
     filter: contrast(.4);
+}
+
+/* ERROR MESSAGE FORM */
+.error {
+    border: 3px solid var(--error, red) !important;
+}
+
+.form-error-message {
+    margin: .5em 0em;
+    display: none;
+    color: var(--error, red);
+    font-weight: lighter;
+}
+
+/* show the error message only when the form has an error */
+.error~.form-error-message {
+    order: -1;
+    display: block;
+}
+
+.error>.form-error-message {
+    order: -1;
+    display: block;
 }

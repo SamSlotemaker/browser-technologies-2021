@@ -1,47 +1,53 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="nl">
 <%- include('./../partials/head.ejs'); %>
 
 <body>
     <main>
         <section>
-            <a href="/">Terug</a>
+            <a href="/<%= userid%>">Terug</a>
             <h1>Ontwerpen</h1>
 
             <form method="POST" action="/<%= userid%>/create" class="create-form">
                 <fieldset required>
                     <legend>Kleur</legend>
-                    <input type="radio" name="color" id="black" value="black" required>
-                    <label for="black">zwart</label>
+                    <div class="input-rows">
+                        <input type="radio" name="color" id="black" value="black" required>
+                        <label for="black">zwart</label>
 
-                    <input type="radio" name="color" id="white" value="white">
-                    <label for="white">wit</label>
+                        <input type="radio" name="color" id="white" value="white">
+                        <label for="white">wit</label>
 
-                    <input type="radio" name="color" id="red" value="red">
-                    <label for="red">rood</label>
+                        <input type="radio" name="color" id="red" value="red">
+                        <label for="red">rood</label>
 
-                    <input type="radio" name="color" id="blue" value="blue">
-                    <label for="blue">blauw</label>
+                        <input type="radio" name="color" id="blue" value="blue">
+                        <label for="blue">blauw</label>
+                    </div>
+                    <strong class="form-error-message">Vul een kleur in alstublieft</strong>
                 </fieldset>
                 <fieldset>
                     <legend>Model</legend>
-                    <input type="radio" name="gender" id="man" value="man" required>
-                    <label for="man">man</label>
+                    <div class="input-rows">
+                        <input type="radio" name="gender" id="man" value="man" required>
+                        <label for="man">man</label>
 
-                    <input type="radio" name="gender" id="woman" value="woman">
-                    <label for="woman">vrouw</label>
+                        <input type="radio" name="gender" id="woman" value="woman">
+                        <label for="woman">vrouw</label>
 
-                    <select name="size" id="size">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-
+                        <select name="size" id="size">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <strong class="form-error-message">Vul een pasvorm in alstublieft</strong>
                 </fieldset>
                 <fieldset>
                     <legend>Text</legend>
                     <textarea name="text" id="text" cols="30" rows="3" required></textarea>
+                    <strong class="form-error-message">Vul text in voor op het t-shirt alstublieft</strong>
                 </fieldset>
 
                 <figure class="shirt-container">

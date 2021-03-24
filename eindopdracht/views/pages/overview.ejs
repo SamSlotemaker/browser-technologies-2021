@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="nl">
 <%- include('./../partials/head.ejs'); %>
 
 <body>
     <main>
         <h1>Nerdy t-shirts</h1>
         <% if(userid){ %>
-        <p class="id-message">Jouw id is: <%= userid %></p>
+        <p class="id-message">Jouw id is: <span id="id"><%= userid %></span></p>
         <% } %>
         <section class="designs">
             <h2>Ontwerpen</h2>

@@ -62,9 +62,6 @@ app.post('/:userid/create', (req, res) => {
             user.designs.push(shirt)
         }
     })
-
-    console.log(users)
-    // console.log(users)
     res.redirect('/' + req.params.userid)
 })
 
