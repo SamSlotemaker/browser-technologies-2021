@@ -1,3 +1,4 @@
+const createForm = document.querySelector('.create-form')
 const colorRadios = document.querySelectorAll('form > fieldset:nth-of-type(1) input')
 const genderRadios = document.querySelectorAll('form > fieldset:nth-of-type(2) input')
 const sizeSelect = document.querySelector('form > fieldset:nth-of-type(2) select')
@@ -8,6 +9,7 @@ const shirtContainer = document.querySelector('.shirt-container')
 const radioFielset = document.querySelector('.create-form > fieldset:nth-of-type(1)')
 const genderFielset = document.querySelector('.create-form > fieldset:nth-of-type(2)')
 const textArea = document.querySelector('.create-form > fieldset > textarea')
+
 
 // LOCAL STORAGE USER
 if (window.localStorage) {
@@ -75,22 +77,30 @@ if (textInput) {
 if (window.location.pathname.includes('create')) {
     if (window.localStorage) {
         const formObject = JSON.parse(localStorage.getItem('SHIRT_INFO'))
-        console.log(formObject)
-        colorRadios.forEach(radio => {
-            if (radio.value === formObject.color) {
-                radio.checked = true;
-            }
-        })
-        genderRadios.forEach(radio => {
-            if (radio.value === formObject.gender) {
-                radio.checked = true;
-            }
-        })
-        sizeSelect.value = formObject.size
+        //fill if localstorage forminfo isn't empty
+        if (formObject) {
+            colorRadios.forEach(radio => {
+                if (radio.value === formObject.color) {
+                    radio.checked = true;
+                }
+            })
+            genderRadios.forEach(radio => {
+                if (radio.value === formObject.gender) {
+                    radio.checked = true;
+                }
+            })
+            sizeSelect.value = formObject.size
 
-        if (formObject !== null) {
-            textArea.value = formObject.text
+            if (formObject !== null) {
+                textArea.value = formObject.text
+            }
         }
+
+
+        // remove localstorage when form is submitted
+        createForm.addEventListener('submit', function () {
+            localStorage.setItem('SHIRT_INFO', null)
+        })
     }
 }
 
