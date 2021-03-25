@@ -131,6 +131,12 @@ section {
     color: var(--orange-light);
 }
 
+.create-form fieldset legend>span {
+    font-size: .8em;
+    font-weight: 300;
+    color: #fff;
+}
+
 .create-form fieldset input[type="radio"] {
     position: absolute;
     opacity: 0;
@@ -141,7 +147,7 @@ section {
     display: inline-block;
     background-color: white;
     color: var(--orange);
-    padding: .3em;
+    padding: .5em;
     margin-right: .5em;
     margin-top: .5em;
     margin-bottom: .5em;
@@ -153,6 +159,15 @@ section {
     color: white;
 }
 
+.create-form fieldset input[type="radio"]:focus+label {
+    -webkit-box-shadow: inset 0px 0px 0px 2px var(--orange);
+    -moz-box-shadow: inset 0px 0px 0px 2px var(--orange);
+    box-shadow: inset 0px 0px 0px 2px var(--orange);
+}
+
+.create-form fieldset input[type="radio"]:checked:focus+label {
+    box-shadow: inset 0px 0px 0px 2px white;
+}
 
 .save-button {
     background-color: var(--orange-light);

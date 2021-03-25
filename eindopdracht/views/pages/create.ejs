@@ -10,9 +10,9 @@
 
             <form method="POST" action="/<%= userid%>/create" class="create-form">
                 <fieldset required>
-                    <legend>Kleur</legend>
+                    <legend>Kleur *</legend>
                     <div class="input-rows">
-                        <input type="radio" name="color" id="black" value="black" required>
+                        <input type="radio" name="color" id="black" value="black" required aria-required="true">
                         <label for="black">zwart</label>
 
                         <input type="radio" name="color" id="white" value="white">
@@ -27,9 +27,9 @@
                     <strong class="form-error-message">Vul een kleur in alstublieft</strong>
                 </fieldset>
                 <fieldset>
-                    <legend>Model</legend>
+                    <legend>Model *</legend>
                     <div class="input-rows">
-                        <input type="radio" name="gender" id="man" value="man" required>
+                        <input type="radio" name="gender" id="man" value="man" required aria-required="true">
                         <label for="man">man</label>
 
                         <input type="radio" name="gender" id="woman" value="woman">
@@ -45,8 +45,8 @@
                     <strong class="form-error-message">Vul een pasvorm in alstublieft</strong>
                 </fieldset>
                 <fieldset>
-                    <legend>Text</legend>
-                    <textarea name="text" id="text" cols="30" rows="3" required></textarea>
+                    <legend>Text *</legend>
+                    <textarea name="text" id="text" cols="30" rows="3" required aria-required="true"></textarea>
                     <strong class="form-error-message">Vul text in voor op het t-shirt alstublieft</strong>
                 </fieldset>
 

@@ -1,12 +1,13 @@
 const colorRadios = document.querySelectorAll('form > fieldset:nth-of-type(1) input')
 const genderRadios = document.querySelectorAll('form > fieldset:nth-of-type(2) input')
+const sizeSelect = document.querySelector('form > fieldset:nth-of-type(2) select')
 const textInput = document.querySelector('form > fieldset:nth-of-type(3) textarea')
 const text = document.querySelector('form > figure > p')
 const shirt = document.querySelector('form > figure > svg')
 const shirtContainer = document.querySelector('.shirt-container')
-let radioFielset = document.querySelector('.create-form > fieldset:nth-of-type(1)')
-let genderFielset = document.querySelector('.create-form > fieldset:nth-of-type(2)')
-let textArea = document.querySelector('.create-form > fieldset > textarea')
+const radioFielset = document.querySelector('.create-form > fieldset:nth-of-type(1)')
+const genderFielset = document.querySelector('.create-form > fieldset:nth-of-type(2)')
+const textArea = document.querySelector('.create-form > fieldset > textarea')
 
 // LOCAL STORAGE USER
 if (window.localStorage) {
@@ -21,7 +22,6 @@ if (window.localStorage) {
         }
         userIdMessage.style.opacity = "0"
     }
-
 
     //get new and current location
     let newLocation = localStorage.getItem('USER_ID');
@@ -54,23 +54,46 @@ if (inputFieldsets.length > 0) {
         })
     })
 }
-
-
-
 // END FORM VALIDATION
 
+// SHIRT EXAMPLE
 //show shirt example when javascript is on 
 if (shirtContainer) {
     shirtContainer.style.display = "block"
 }
-
+//change shirt color when color changes
 colorRadios.forEach(radio => {
     radio.addEventListener('change', handleColorChange)
 })
 
+//show text on shirt everytime the user lifts a key
 if (textInput) {
     textInput.addEventListener('keyup', handleTextChange)
 }
+
+// add info to page when it's still in local storage
+if (window.location.pathname.includes('create')) {
+    if (window.localStorage) {
+        const formObject = JSON.parse(localStorage.getItem('SHIRT_INFO'))
+        console.log(formObject)
+        colorRadios.forEach(radio => {
+            if (radio.value === formObject.color) {
+                radio.checked = true;
+            }
+        })
+        genderRadios.forEach(radio => {
+            if (radio.value === formObject.gender) {
+                radio.checked = true;
+            }
+        })
+        sizeSelect.value = formObject.size
+
+        if (formObject !== null) {
+            textArea.value = formObject.text
+        }
+    }
+}
+
 
 // when color radio buttons change value
 function handleColorChange(e) {
@@ -80,7 +103,7 @@ function handleColorChange(e) {
     else {
         text.style.setProperty('--textColor', 'white')
     }
-
+    //change colors
     switch (e.target.value) {
         case 'blue':
             shirt.style.setProperty("--shirtColor", "#2d2dff")
@@ -102,11 +125,21 @@ function handleColorChange(e) {
     }
 }
 
+//changes the value of the shirt message
 function handleTextChange(e) {
     text.textContent = e.target.value
 }
 
+//adds error to target of the click class when value isn't filled
 function handleBlur(e) {
+    // add to localstorage for later finishing
+    if (window.localStorage) {
+        let formObject = getFormValues()
+        localStorage.setItem('SHIRT_INFO', JSON.stringify(formObject))
+        console.log(JSON.parse(localStorage.getItem('SHIRT_INFO')))
+    }
+
+
     if (e.target.value === '') {
         e.target.classList.add('error')
     }
@@ -115,6 +148,7 @@ function handleBlur(e) {
     }
 }
 
+//check if the values are valid and add error class when they are not
 function checkFormValidation(e) {
     let colorRadioValue = document.querySelector('input[name="color"]:checked')
     let genderRadioValue = document.querySelector('input[name="gender"]:checked')
@@ -127,4 +161,23 @@ function checkFormValidation(e) {
     if (textArea.value === '') {
         textArea.classList.add('error')
     }
+}
+
+function getFormValues() {
+    let checkedColor = document.querySelector('form > fieldset:nth-of-type(1) input:checked')
+    let colorValue = null;
+    if (checkedColor) {
+        colorValue = checkedColor.value
+    }
+    let checkedGender = document.querySelector('form > fieldset:nth-of-type(2) input:checked')
+    let genderValue = null;
+    if (checkedGender) {
+        genderValue = checkedGender.value
+    }
+
+    let sizeValue = document.querySelector('form > fieldset:nth-of-type(2) select').value
+
+    let textValue = textArea.value
+    let formObject = { color: colorValue, gender: genderValue, size: sizeValue, text: textValue }
+    return formObject;
 }

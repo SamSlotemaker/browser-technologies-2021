@@ -23,17 +23,17 @@
                         <h3><%= design.color %></h3>
                         <p class="text-description"><%= design.text %></p>
                         <form method="POST" action="/<%=userid%>/cart/add/<%= design.id %>">
-                            <button class="cart-button">Cart</button>
+                            <button class="cart-button">Toevoegen</button>
                         </form>
                         <form method="POST" action="/<%=userid%>/designs/delete/<%= design.id %>">
-                            <button class="remove-button">X</button>
+                            <button class="remove-button" aria-label="verwijderen">X</button>
                         </form>
 
                     </article>
                 </li>
                 <% }) %>
             </ul>
-            <a class="plus-button" href="/<%=userid%>/create">+</a>
+            <a class="plus-button" href="/<%=userid%>/create" aria-label="ontwerp maken">+</a>
             <% } %>
 
         </section>
