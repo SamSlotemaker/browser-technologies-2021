@@ -10,6 +10,15 @@ Een applicatie om zelf je eigen nerdy t-shirt te ontwerpen en bestellen.
 ### Opbouw van de applicatie
 De core functionaliteit van de applicatie moet altijd volledig werkbaar zijn, bijvoorbeeld wanneer JavaScript, of zelfs CSS niet beschikbaar is. Ook kan het zijn dat browsers bepaalde features niet ondersteunen, zoals localStorage, ook dan moet de applicatie werkbaar zijn. 
 
+#### Core functionalities
+De core functionaliteiten zijn: 
+* Het ontwerpen van een t-shirt
+* De mogelijkheid een shir te bestellen
+* Later terugkomen bij de ontwerpen
+* Ontwerpen verwijderen.
+
+Om de core functionaliteiten altijd werkend te houden, worden ontwerpen afgehandeld met POST requests naar de server en hier opgeslagen. Ieder request wordt gekoppeld aan een uniek ID waardoor deze allemaal later terug te vangen zijn. 
+
 ### Laag 1:
 Het ontwerpen van een t-shirt, deze vervolgens op kunnen slaan en bestellen. Ook moeten ontwerpen bewaard kunnen worden voor latere sessies.
 
@@ -19,6 +28,15 @@ De applicatie krijgt styling en wordt bruikbaar. De gebruiker beschikt nog steed
 
 ### Laag 3: 
 De applicatie is progressively enhanced doormiddel van JavaScript en een browser API, in dit geval LocalStorage.
+
+#### Accesibility 
+![Schermopname (151)](https://user-images.githubusercontent.com/60625329/112881961-a3c11400-90cc-11eb-9d29-4b736fd177e5.png)
+
+##### Kleuren
+Om de accesibility hoog te houden heb ik regelmatig in lighthouse gecheckt of het kleurencontrast goed was. 
+
+##### Toetsenbord
+Ook heb ik er voor gezorgd dat de HTML elementen gebruikt worden waar deze voor bedoeld zijn, waardoor de site volledig met een toetsenbord te bedienen is. 
 
 #### LocalStorage - userID: 
 De applicatie maakt gebruik van localstorage, zodat een gebruiker zijn eigen id niet meer hoeft te onthouden of te bookmarken. LocalStorage slaat dit id op een leest deze uit bij een paginabezoek, hierdoor behoudt de gebruiker zijn ontwerpen zonder extra moeite. Om een userID bij te houden maak ik gebruik van uuidv4.
