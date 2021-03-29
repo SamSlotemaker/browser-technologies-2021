@@ -14,13 +14,7 @@ const nextBtn = document.querySelector('#nextBtn')
 const prevBtn = document.querySelector('#prevBtn')
 
 
-
-//add progressive form when javascript is enabled
-if (createForm) {
-    createForm.classList.add('prog-form')
-}
-
-// LOCAL STORAGE USER
+// LOCAL STORAGE USER ID
 if (storageAvailable('localStorage')) {
     //set new userID when it doens't already exist
     let userIdMessage = document.querySelector('.id-message')
@@ -41,7 +35,21 @@ if (storageAvailable('localStorage')) {
     if (currentLocation !== newLocation && !window.location.pathname.includes('create')) {
         window.location = newLocation
     }
-
+} else {
+    //check if clipboard exists in navigator
+    if ('clipboard' in navigator) {
+        let userIdMessage2 = document.querySelector('.id-message-2')
+        let userID = document.querySelector('#id').textContent
+        if (userIdMessage2) {
+            userIdMessage2.innerHTML += ', of kopieer jouw ID naar je clipboard door <span>hier</span> te klikken'
+            let span = document.querySelector('.id-message-2 span')
+            //copy id to clipboard when user clicks
+            span.addEventListener('click', () => {
+                navigator.clipboard.writeText(userID);
+                alert('je heb userID: ' + userID + ' naar je clipboard gekopieerd')
+            })
+        }
+    }
 }
 
 // FORM VALIDATION
@@ -50,10 +58,12 @@ if (inputFieldsets.length > 0) {
     inputFieldsets.forEach(fieldset => {
         fieldset.addEventListener('blur', handleBlur, true)
     })
+    //add formvalidation to textfield on form submit
     let submitButton = document.querySelector('.create-form > button[type="submit"]')
     submitButton.addEventListener('click', function () {
         checkFormValidation(2)
     })
+    //remove error when a button is clicked
     colorRadios.forEach(radio => {
         radio.addEventListener('click', () => {
             radioFielset.classList.remove('error')
@@ -67,6 +77,10 @@ if (inputFieldsets.length > 0) {
 }
 // END FORM VALIDATION
 
+//add progressive form when javascript is enabled
+if (createForm) {
+    createForm.classList.add('prog-form')
+}
 // SHIRT EXAMPLE
 //show shirt example when javascript is on 
 if (shirtContainer) {
@@ -111,7 +125,6 @@ if (window.location.pathname.includes('create')) {
         })
     }
 }
-
 
 // when color radio buttons change value
 function handleColorChange(e) {

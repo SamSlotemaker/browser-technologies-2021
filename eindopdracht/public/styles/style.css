@@ -76,6 +76,11 @@ section {
     text-align: center;
 }
 
+.id-message-2 span {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .remove-button {
     background-color: rgb(179, 44, 44);
     font-weight: bold;
@@ -239,7 +244,8 @@ section {
 .shirt-container p {
     font-family: 'Source Code Pro', monospace;
     line-height: 1.5em;
-    font-size: bold;
+    font-weight: bold;
+    font-size: 1em;
     text-align: center;
     --textColor: black;
     word-wrap: break-word;
@@ -249,6 +255,12 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%)
+}
+
+@supports(font-size: clamp(1rem, 10vw, 2rem)) {
+    .shirt-container p {
+        font-size: clamp(1em, 2.5vw, 2em);
+    }
 }
 
 .shirt {
@@ -271,7 +283,9 @@ section {
 }
 
 .prog-form fieldset:nth-of-type(1) .input-rows label {
-    flex-grow: 1;
+    display: block;
+    width: 25%;
+    margin: 0;
 }
 
 /* prog form navigation buttons */

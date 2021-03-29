@@ -1,0 +1,8 @@
+
+  {
+    "name": "shirtontwerp",
+    "permissions": [
+        "*://developer.mozilla.org/*",
+        "webRequest"
+      ]
+  }

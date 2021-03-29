@@ -24,7 +24,7 @@
                         <h3><%= design.color %></h3>
                         <p class="text-description"><%= design.text %></p>
                         <form method="POST" action="/<%=userid%>/cart/add/<%= design.id %>">
-                            <button class="cart-button">Toevoegen</button>
+                            <button class="cart-button">Bestel</button>
                         </form>
                         <form method="POST" action="/<%=userid%>/designs/delete/<%= design.id %>">
                             <button class="remove-button" aria-label="verwijderen">X</button>
