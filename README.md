@@ -118,3 +118,32 @@ Test de applicatie wanneer:
 ### Safari iOS 
 ![Video](https://user-images.githubusercontent.com/60625329/112877125-ab7dba00-90c6-11eb-8fba-daf5fdcc146c.gif)
 
+
+#### Javascript uitgeschakeld
+Wanneer javascirpt is uitgeschakeld is localstorage niet beschikbaar om de gebruiker door te sturen dus het ID zal zelf bewaard moeten worden.
+
+![Schermopname (144)](https://user-images.githubusercontent.com/60625329/112879899-1086df00-90ca-11eb-9116-45b8b8855f8b.png)
+
+Ook wordt er geen live preview meer getoond en is het form simpelweg een standaard formulier, zonder progressive disclosure. 
+
+![Schermopname (145)](https://user-images.githubusercontent.com/60625329/112879901-111f7580-90ca-11eb-99f6-983cd667e1bb.png)
+
+#### Cookies uitgeschakeld
+
+Wanneer cookies/localstorage niet beschikbaar zijn, wordt er een mogelijkheid getoond om het ID naar het clipboard te kopieren, om het de gebruiker toch net iets makkelijker te maken.
+![Schermopname (146)](https://user-images.githubusercontent.com/60625329/112879902-111f7580-90ca-11eb-93b5-8ee8bc6dfe4a.png)
+
+Het enhanced formulier kan verder wel volledig gebruikt worden.
+![Schermopname (148)](https://user-images.githubusercontent.com/60625329/112879904-111f7580-90ca-11eb-9044-863943d8ecec.png)
+
+### Styles uitgeschakeld
+Zonder styles zijn de pagina's een stuk minder overzichtelijk, maar is de core nog steeds volledig bruikbaar.
+
+![Schermopname (149)](https://user-images.githubusercontent.com/60625329/112879905-11b80c00-90ca-11eb-8aa7-0ace43fa4d1c.png)
+
+![Schermopname (150)](https://user-images.githubusercontent.com/60625329/112879896-0fee4880-90ca-11eb-9b38-f4e7dbbc5093.png)
+
+
+
+
+
