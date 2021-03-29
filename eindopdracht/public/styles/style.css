@@ -257,6 +257,7 @@ section {
     transform: translate(-50%, -50%)
 }
 
+
 @supports(font-size: clamp(1rem, 10vw, 2rem)) {
     .shirt-container p {
         font-size: clamp(1em, 2.5vw, 2em);
@@ -309,6 +310,22 @@ section {
     margin-left: auto;
 }
 
+
+.steps {
+    display: none;
+}
+
+.prog-form .prog-form-nav {
+    position: relative;
+}
+
+.prog-form .steps {
+    position: absolute;
+    display: block;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    bottom: 0;
+}
 
 /* ERROR MESSAGE FORM */
 .error {

@@ -12,6 +12,7 @@ const genderFielset = document.querySelector('.create-form > fieldset:nth-of-typ
 const textArea = document.querySelector('.create-form > fieldset > textarea')
 const nextBtn = document.querySelector('#nextBtn')
 const prevBtn = document.querySelector('#prevBtn')
+const steps = document.querySelector('.steps')
 
 
 // LOCAL STORAGE USER ID
@@ -61,7 +62,8 @@ if (inputFieldsets.length > 0) {
     //add formvalidation to textfield on form submit
     let submitButton = document.querySelector('.create-form > button[type="submit"]')
     submitButton.addEventListener('click', function () {
-        checkFormValidation(2)
+        console.log(currentTab)
+        checkFormValidation(currentTab)
     })
     //remove error when a button is clicked
     colorRadios.forEach(radio => {
@@ -197,6 +199,7 @@ function checkFormValidation(n) {
     return true
 }
 
+
 function getFormValues() {
     let checkedColor = document.querySelector('form > fieldset:nth-of-type(1) input:checked')
     let colorValue = null;
@@ -268,7 +271,9 @@ function nextPrev(n, button) {
     // Increase or decrease the current tab by 1:
     currentTab = currentTab + n;
     // if you have reached the end of the form... :
-
+    if (steps) {
+        steps.textContent = (currentTab + 1) + '/3'
+    }
     showTab(currentTab);
 
 }
