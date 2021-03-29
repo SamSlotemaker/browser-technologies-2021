@@ -30,7 +30,6 @@ if (storageAvailable('localStorage')) {
 
         if (!localStorage.getItem('USER_ID')) {
             localStorage.setItem('USER_ID', userID)
-            console.log('setting item');
         }
         userIdMessage2.style.display = 'none'
     }
@@ -40,7 +39,6 @@ if (storageAvailable('localStorage')) {
     let currentLocation = window.location.pathname.replace('/', '')
     //if current location isn't equal to the localstorage location, redirect user to his location
     if (currentLocation !== newLocation && !window.location.pathname.includes('create')) {
-        console.log('sending')
         window.location = newLocation
     }
 
@@ -156,7 +154,6 @@ function handleBlur(e) {
     if (storageAvailable('localStorage')) {
         let formObject = getFormValues()
         localStorage.setItem('SHIRT_INFO', JSON.stringify(formObject))
-        console.log(JSON.parse(localStorage.getItem('SHIRT_INFO')))
     }
 
 
@@ -170,7 +167,6 @@ function handleBlur(e) {
 
 //check if the values are valid and add error class when they are not
 function checkFormValidation(n) {
-    console.log(n)
     let colorRadioValue = document.querySelector('input[name="color"]:checked')
     let genderRadioValue = document.querySelector('input[name="gender"]:checked')
     if (n === 0 && !colorRadioValue) {
@@ -249,7 +245,6 @@ function showTab(n) {
 function nextPrev(n, button) {
     if (button == 'next') {
         if (!checkFormValidation(currentTab)) {
-            console.log('fout')
             return;
         }
     }
