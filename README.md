@@ -70,3 +70,19 @@ if ('clipboard' in navigator) {
     ...
 }
 ```
+
+### Css 
+
+#### @supports
+Doormiddel van @supports heb ik nieuwere css features een alternatief meegegeven wanneer deze feature niet beschikbaar is. Door cascading wordt de twede waarde hier gepakt wanneer beschikbaar. Wanneer niet beschikbaar wordt de @supports overgeslagen en wordt de eerste waarde gebruikt.
+```css 
+p {
+    font-size: 1.5em;
+}
+
+@supports(font-size: clamp(1rem, 10vw, 2rem)) {
+    p {
+        font-size: clamp(1em, 2.5vw, 2em);
+    }
+}
+```
