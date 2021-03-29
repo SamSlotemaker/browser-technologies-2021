@@ -98,8 +98,8 @@ Ik heb mijn applicatie in de volgende browsers getest:
 
 En op desktop heb ik op de volgende manieren getest:
 Test de applicatie wanneer:
-1. alle functies beschikbaar zijn (ideale scenario)
-2. enkel Coockies uitstaan (localStorage niet beschikbaar)
+1. Alle functies beschikbaar zijn (ideale scenario)
+2. Enkel Coockies uitstaan (localStorage niet beschikbaar)
 3. JavaScript uitstaat (laag 2)
 4. CSS uistaat
 5. JavaScript en CSS beide uitstaan (laag 1)
