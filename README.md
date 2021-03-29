@@ -1,5 +1,9 @@
 # Browser technologies
 
+## todos
+- link maken van ID / of op andere manier oplossen
+- maak het formulier ontzichtbaar
+
 ## Description 
 Een progressive enchanced applicatie waarmee je zelfs je eigen shirt kunt ontwerpen en opslaan.
 
