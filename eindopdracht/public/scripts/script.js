@@ -40,8 +40,8 @@ if (storageAvailable('localStorage')) {
     //check if clipboard exists in navigator
     if ('clipboard' in navigator) {
         let userIdMessage2 = document.querySelector('.id-message-2')
-        let userID = document.querySelector('#id').textContent
         if (userIdMessage2) {
+            let userID = document.querySelector('#id').textContent
             userIdMessage2.innerHTML += ', of kopieer jouw ID naar je clipboard door <span>hier</span> te klikken'
             let span = document.querySelector('.id-message-2 span')
             //copy id to clipboard when user clicks
