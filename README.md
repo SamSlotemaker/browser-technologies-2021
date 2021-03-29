@@ -110,7 +110,7 @@ Test de applicatie wanneer:
 
 
 ### Firefox desktop
-![Shirt ontwerp - Google Chrome 2021-03-29 19-14-36](https://user-images.githubusercontent.com/60625329/112876734-272b3700-90c6-11eb-904b-72961883ae59.gif)
+![Shirt ontwerp - Mozilla Firefox 2021-03-29 19-35-03](https://user-images.githubusercontent.com/60625329/112880819-3d87c180-90cb-11eb-8ec6-86ec60d5a592.gif)
 
 ### Chrome android 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/60625329/112875802-f1398300-90c4-11eb-8306-98868469d531.gif)
