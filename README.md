@@ -103,3 +103,18 @@ Test de applicatie wanneer:
 3. JavaScript uitstaat (laag 2)
 4. CSS uistaat
 5. JavaScript en CSS beide uitstaan (laag 1)
+
+
+### Chrome desktop
+![Shirt ontwerp - Google Chrome 2021-03-29 19-14-36](https://user-images.githubusercontent.com/60625329/112876370-ba17a180-90c5-11eb-88b3-163f4fde09c8.gif)
+
+
+### Firefox desktop
+![Shirt ontwerp - Google Chrome 2021-03-29 19-14-36](https://user-images.githubusercontent.com/60625329/112876734-272b3700-90c6-11eb-904b-72961883ae59.gif)
+
+### Chrome android 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/60625329/112875802-f1398300-90c4-11eb-8306-98868469d531.gif)
+
+### Safari iOS 
+![Video](https://user-images.githubusercontent.com/60625329/112877125-ab7dba00-90c6-11eb-8fba-daf5fdcc146c.gif)
+
