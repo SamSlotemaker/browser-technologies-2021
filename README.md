@@ -62,7 +62,6 @@ https://www.w3schools.com/howto/howto_js_form_steps.asp
 In het bouwen van de applicatie is er gebruik gemaakt van feature detectie, om problemen te voorkomen en op te lossen wanneer bepaalde features niet aanwezig/beschikbaar zijn
 
 ### Javascript
-
 #### LocalStorage
 ```js
 
@@ -89,6 +88,9 @@ if ('clipboard' in navigator) {
     ...
 }
 ```
+
+### Cut the musterd 
+Ik trek een grens bij browsers die het gebruik van ES6 niet ondersteunen, dit geldt voor internet explorer en browsers ouder dan 2015. Het gebruik van let en const zorgt voor strictere code en onderandere het gebruik van arrow functions, dat code een stuk leesbaarder maakt.  
 
 ### Css 
 
